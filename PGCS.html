@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/Grid.css">
+    <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
+    <link href="https://unpkg.com/ionicons@4.2.4/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet" type="text/css">
+    <title id="title-bar">PGCS Rating Form - PES</title>
+</head>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<body onload="checkCookie(), w3.hide('#timeliness'), w3.hide('#caseManagement'), w3.hide('#buttons'), w3.hide('#time2-button'), w3.hide('#caseManagement2-button'), w3.hide('#pgcs-output')">
+<h2 id="html-title-bar" style="margin-top: 15px" style="margin-bottom: 10px" style="color: #414141">PGCS PE Specialist
+    Report!</h2>
+
+<div id="employee-section">
+    <div class="row" id="top">
+        <div class="col span-1-of-2 box">
+            <i class="ion-ios-paper-outline icon-big"></i>
+            <h3>Worker</h3>
+            <input type="text" id="wkrName" placeholder="Worker Name">
+            <input type="number" id="wkrNum" maxlength="6" placeholder="AASIS#">
+            <select name="county" style="width: 100%">
+                <option disabled selected>Select a county</option>
+                <option>AAPC</option>
+                <option>Arkansas County</option>
+                <option>Ashley County</option>
+                <option>Baxter County</option>
+                <option>Benton County</option>
+                <option>Boone County</option>
+                <option>Bradley County</option>
+                <option>Calhoun County</option>
+                <option>Carroll County</option>
+                <option>Chicot County</option>
+                <option>Clark County</option>
+                <option>Clay County</option>
+                <option>Cleburne County</option>
+                <option>Cleveland County</option>
+                <option>Columbia County</option>
+                <option>Conway County</option>
+                <option>Craighead County</option>
+                <option>Crawford County</option>
+                <option>Crittenden County</option>
+                <option>Cross County</option>
+                <option>Dallas County</option>
+                <option>Desha County</option>
+                <option>Drew County</option>
+                <option>Faulkner County</option>
+                <option>Franklin County</option>
+                <option>Fulton County</option>
+                <option>Garland County</option>
+                <option>Grant County</option>
+                <option>Greene County</option>
+                <option>Hempstead County</option>
+                <option>Hot Spring County</option>
+                <option>Howard County</option>
+                <option>Independence County</option>
+                <option>Izard County</option>
+                <option>Jackson County</option>
+                <option>Jefferson County</option>
+                <option>Johnson county</option>
+                <option>Lafayette County</option>
+                <option>Lawrence County</option>
+                <option>Lee County</option>
+                <option>Lincoln County</option>
+                <option>Little River County</option>
+                <option>Logan County</option>
+                <option>Lonoke County</option>
+                <option>Madison County</option>
+                <option>Marion County</option>
+                <option>Miller County</option>
+                <option>Mississippi County</option>
+                <option>Monroe County</option>
+                <option>Montgomery County</option>
+                <option>Nevada County</option>
+                <option>Newton County</option>
+                <option>Ouachita County</option>
+                <option>Perry County</option>
+                <option>Phillips County</option>
+                <option>Pike County</option>
+                <option>Poinsett County</option>
+                <option>Polk County</option>
+                <option>Pope County</option>
+                <option>Prairie County</option>
+                <option>Pulaski County EAST</option>
+                <option>Pulaski County JACKSONVILLE</option>
+                <option>Pulaski County NORTH</option>
+                <option>Pulaski County SOUTH</option>
+                <option>Pulaski County SOUTHWEST</option>
+                <option>Randolph County</option>
+                <option>St. Francis County</option>
+                <option>Saline County</option>
+                <option>Scott County</option>
+                <option>Searcy County</option>
+                <option>Sebastian County</option>
+                <option>Sevier County</option>
+                <option>Sharp County</option>
+                <option>Stone County</option>
+                <option>Union County</option>
+                <option>Van Buren County</option>
+                <option>Washington County</option>
+                <option>White County</option>
+                <option>Woodruff County</option>
+                <option>Yell County</option>
+
+            </select>
+        </div>
+        <div class="col span-1-of-2 box">
+            <i class="ion-ios-paper-outline icon-big"></i>
+            <h3>Reviewing Supervisor</h3>
+            <div style="font-size: 100%" id="super1"></div>
+            <div style="font-size: 100%" id="reviewDate">REPORT DATE</div>
+        </div>
+    </div>
+</div>
+<div class="row" id="accuracy">
+    <h2 style="margin-bottom: 10px">Accuracy:</h2>
+    <div class="row">
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-calculator-outline icon-big"></i>
+            <h3>Month 1</h3>
+            <select id="m1Set" name="month1" placeholder="Select One" style="margin-bottom: 5px">
+                <option disabled selected>Select One</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <!--                    <select id="m1NWSet" name="month1NW" placeholder="Select One" style="margin-bottom: 5px">
+                                    <option value="0.5">NW Month 1</option>
+                                    <option value="0.72">NW Month 2</option>
+                                    <option value="1" selected>Regular</option>
+                                </select>-->
+            <h4>SNAP</h4>
+            <input type="number" id="m1Acc" placeholder="Reviewed">
+            <input type="number" id="m1Err" placeholder="Errors">
+            <div id='month1-acc'>0.00%</div>
+            <h4>MEDICAID</h4>
+            <input type="number" id="m1MCAcc" placeholder="Reviewed">
+            <input type="number" id="m1MCErr" placeholder="Errors">
+            <div id='month1-MCacc'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m1TEAAcc" placeholder="Reviewed">
+            <input type="number" id="m1TEAErr" placeholder="Errors">
+            <div id='month1-TEAacc'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-paper-outline icon-big"></i>
+            <h3>Month 2</h3>
+            <select id="m2Set" name="month2" placeholder="Select One" style="margin-bottom: 5px">
+                <option disabled selected>Select One</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <h4>SNAP</h4>
+            <input type="number" id="m2Acc" placeholder="Reviewed">
+            <input type="number" id="m2Err" placeholder="Errors">
+            <div id='month2-acc'>0.00%</div>
+            <h4>MEDICAID</h4>
+            <input type="number" id="m2MCAcc" placeholder="Reviewed">
+            <input type="number" id="m2MCErr" placeholder="Errors">
+            <div id='month2-MCacc'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m2TEAAcc" placeholder="Reviewed">
+            <input type="number" id="m2TEAErr" placeholder="Errors">
+            <div id='month2-TEAacc'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-infinite-outline icon-big"></i>
+            <h3>Month 3</h3>
+            <select id="m3Set" name="month3" placeholder="Select One" style="margin-bottom: 5px">
+                <option disabled selected>Select One</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <h4>SNAP</h4>
+            <input type="number" id="m3Acc" placeholder="Reviewed">
+            <input type="number" id="m3Err" placeholder="Errors">
+            <div id='month3-acc'>0.00%</div>
+            <h4>MEDICAID</h4>
+            <input type="number" id="m3MCAcc" placeholder="Reviewed">
+            <input type="number" id="m3MCErr" placeholder="Errors">
+            <div id='month3-MCacc'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m3TEAAcc" placeholder="Reviewed">
+            <input type="number" id="m3TEAErr" placeholder="Errors">
+            <div id='month3-TEAacc'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-stopwatch-outline icon-big"></i>
+            <h3>Month 4</h3>
+            <select id="m4Set" name="month4" placeholder="Select One" style="margin-bottom: 5px">
+                <option disabled selected>Select One</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <h4>SNAP</h4>
+            <input type="number" id="m4Acc" placeholder="Reviewed">
+            <input type="number" id="m4Err" placeholder="Errors">
+            <div id='month4-acc'>0.00%</div>
+            <h4>MEDICAID</h4>
+            <input type="number" id="m4MCAcc" placeholder="Reviewed">
+            <input type="number" id="m4MCErr" placeholder="Errors">
+            <div id='month4-MCacc'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m4TEAAcc" placeholder="Reviewed">
+            <input type="number" id="m4TEAErr" placeholder="Errors">
+            <div id='month4-TEAacc'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-calculator-outline icon-big"></i>
+            <h3>Month 5</h3>
+            <select id="m5Set" name="month5" placeholder="Select One" style="margin-bottom: 5px">
+                <option disabled selected>Select One</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <h4>SNAP</h4>
+            <input type="number" id="m5Acc" placeholder="Reviewed">
+            <input type="number" id="m5Err" placeholder="Errors">
+            <div id='month5-acc'>0.00%</div>
+            <h4>MEDICAID</h4>
+            <input type="number" id="m5MCAcc" placeholder="Reviewed">
+            <input type="number" id="m5MCErr" placeholder="Errors">
+            <div id='month5-MCacc'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m5TEAAcc" placeholder="Reviewed">
+            <input type="number" id="m5TEAErr" placeholder="Errors">
+            <div id='month5-TEAacc'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-paper-outline icon-big"></i>
+            <h3>Month 6</h3>
+            <select id="m6Set" name="month6" placeholder="Select One" style="margin-bottom: 5px">
+                <option disabled selected>Select One</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <h4>SNAP</h4>
+            <input type="number" id="m6Acc" placeholder="Reviewed">
+            <input type="number" id="m6Err" placeholder="Errors">
+            <div id='month6-acc'>0.00%</div>
+            <h4>MEDICAID</h4>
+            <input type="number" id="m6MCAcc" placeholder="Reviewed">
+            <input type="number" id="m6MCErr" placeholder="Errors">
+            <div id='month6-MCacc'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m6TEAAcc" placeholder="Reviewed">
+            <input type="number" id="m6TEAErr" placeholder="Errors">
+            <div id='month6-TEAacc'>0.00%</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-infinite-outline icon-big"></i>
+            <h3>Month 7</h3>
+            <select id="m7Set" name="month7" placeholder="Select One" style="margin-bottom: 5px">
+                <option disabled selected>Select One</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <h4>SNAP</h4>
+            <input type="number" id="m7Acc" placeholder="Reviewed">
+            <input type="number" id="m7Err" placeholder="Errors">
+            <div id='month7-acc'>0.00%</div>
+            <h4>MEDICAID</h4>
+            <input type="number" id="m7MCAcc" placeholder="Reviewed">
+            <input type="number" id="m7MCErr" placeholder="Errors">
+            <div id='month7-MCacc'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m7TEAAcc" placeholder="Reviewed">
+            <input type="number" id="m7TEAErr" placeholder="Errors">
+            <div id='month7-TEAacc'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-stopwatch-outline icon-big"></i>
+            <h3>Month 8</h3>
+            <select id="m8Set" name="month8" placeholder="Select One" style="margin-bottom: 5px">
+                <option disabled selected>Select One</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <h4>SNAP</h4>
+            <input type="number" id="m8Acc" placeholder="Reviewed">
+            <input type="number" id="m8Err" placeholder="Errors">
+            <div id='month8-acc'>0.00%</div>
+            <h4>MEDICAID</h4>
+            <input type="number" id="m8MCAcc" placeholder="Reviewed">
+            <input type="number" id="m8MCErr" placeholder="Errors">
+            <div id='month8-MCacc'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m8TEAAcc" placeholder="Reviewed">
+            <input type="number" id="m8TEAErr" placeholder="Errors">
+            <div id='month8-TEAacc'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-calculator-outline icon-big"></i>
+            <h3>Month 9</h3>
+            <select id="m9Set" name="month9" placeholder="Select One" style="margin-bottom: 5px">
+                <option disabled selected>Select One</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <h4>SNAP</h4>
+            <input type="number" id="m9Acc" placeholder="Reviewed">
+            <input type="number" id="m9Err" placeholder="Errors">
+            <div id='month9-acc'>0.00%</div>
+            <h4>MEDICAID</h4>
+            <input type="number" id="m9MCAcc" placeholder="Reviewed">
+            <input type="number" id="m9MCErr" placeholder="Errors">
+            <div id='month9-MCacc'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m9TEAAcc" placeholder="Reviewed">
+            <input type="number" id="m9TEAErr" placeholder="Errors">
+            <div id='month9-TEAacc'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-paper-outline icon-big"></i>
+            <h3>Month 10</h3>
+            <select id="m10Set" name="month10" placeholder="Select One" style="margin-bottom: 5px">
+                <option disabled selected>Select One</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <h4>SNAP</h4>
+            <input type="number" id="m10Acc" placeholder="Reviewed">
+            <input type="number" id="m10Err" placeholder="Errors">
+            <div id='month10-acc'>0.00%</div>
+            <h4>MEDICAID</h4>
+            <input type="number" id="m10MCAcc" placeholder="Reviewed">
+            <input type="number" id="m10MCErr" placeholder="Errors">
+            <div id='month10-MCacc'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m10TEAAcc" placeholder="Reviewed">
+            <input type="number" id="m10TEAErr" placeholder="Errors">
+            <div id='month10-TEAacc'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-infinite-outline icon-big"></i>
+            <h3>Month 11</h3>
+            <select id="m11Set" name="month11" placeholder="Select One" style="margin-bottom: 5px">
+                <option disabled selected>Select One</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <h4>SNAP</h4>
+            <input type="number" id="m11Acc" placeholder="Reviewed">
+            <input type="number" id="m11Err" placeholder="Errors">
+            <div id='month11-acc'>0.00%</div>
+            <h4>MEDICAID</h4>
+            <input type="number" id="m11MCAcc" placeholder="Reviewed">
+            <input type="number" id="m11MCErr" placeholder="Errors">
+            <div id='month11-MCacc'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m11TEAAcc" placeholder="Reviewed">
+            <input type="number" id="m11TEAErr" placeholder="Errors">
+            <div id='month11-TEAacc'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-stopwatch-outline icon-big"></i>
+            <h3>Month 12</h3>
+            <select id="m12Set" name="month12" placeholder="Select One" style="margin-bottom: 5px">
+                <option disabled selected>Select One</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <h4>SNAP</h4>
+            <input type="number" id="m12Acc" placeholder="Reviewed">
+            <input type="number" id="m12Err" placeholder="Errors">
+            <div id='month12-acc'>0.00%</div>
+            <h4>MEDICAID</h4>
+            <input type="number" id="m12MCAcc" placeholder="Reviewed">
+            <input type="number" id="m12MCErr" placeholder="Errors">
+            <div id='month12-MCacc'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m12TEAAcc" placeholder="Reviewed">
+            <input type="number" id="m12TEAErr" placeholder="Errors">
+            <div id='month12-TEAacc'>0.00%</div>
+        </div>
+
+    </div>
+
+    <a id="time-button" align="center" style="width: 100%" class="btn btn-full" href="#timeliness"
+       onclick="w3.hide('#accuracy'), w3.show('#timeliness'), setTitleBar(), setMonthTitles(), w3.hide('#employee-section')"
+       style="margin-top: 50px">Move On</a>
+    <a id="time2-button" class="btn btn-full" href="#buttons" onclick="w3.hide('#accuracy'), w3.show('#buttons')"
+       style="margin-top: 50px">Done</a>
+</div>
+<br><br><br>
+<div class="row" id="timeliness">
+    <h2>Timeliness &mdash;Production:</h2>
+    <div class="row">
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-pie-outline icon-big"></i>
+            <h3 id="m1Dupe">Month 1</h3>
+            <h4>Work Days</h4>
+            <input type="number" id="m1AvailableDays" placeholder="Days">
+            <h4>SNAP - ABCDE</h4>
+            <input type="number" id="m1Time" placeholder="Assigned">
+            <input type="number" id="m1Late" placeholder="Late">
+            <input type="number" id="m1reassigned" placeholder="Reassigned">
+            <div id='month1-time'>0.00%</div>
+            <h4>SNAP - Exp.</h4>
+            <input type="number" id="m1TimeEXP" placeholder="Assigned">
+            <input type="number" id="m1LateEXP" placeholder="Late">
+            <input type="number" id="m1EXPReassigned" placeholder="Reassigned">
+            <div id='month1-timeEXP'>0.00%</div>
+            <h4>SAR/Chng/MP</h4>
+            <input type="number" id="m1TimeSAR" placeholder="Assigned">
+            <input type="number" id="m1LateSAR" placeholder="Late">
+            <input type="number" id="m1reassignedSAR" placeholder="Reassigned">
+            <div id='month1-SARtime'>0.00%</div>
+            <h4>Traditional Med.</h4>
+            <input type="number" id="m1MCTime" placeholder="Assigned">
+            <input type="number" id="m1MCLate" placeholder="Late">
+            <input type="number" id="m1MCReassigned" placeholder="Reassigned">
+            <div id='month1-MCtime'>0.00%</div>
+            <h4>MAGI</h4>
+            <input type="number" id="m1MAGITime" placeholder="Assigned">
+            <input type="number" id="m1MAGILate" placeholder="Late">
+            <input type="number" id="m1MAGIReassigned" placeholder="Reassigned">
+            <div id='month1-MAGItime'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m1TEATime" placeholder="Assigned">
+            <input type="number" id="m1TEALate" placeholder="Late">
+            <input type="number" id="m1TEAReassigned" placeholder="Reassigned">
+            <div id='month1-TEAtime'>0.00%</div>
+
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-refresh-outline icon-big"></i>
+            <h3 id="m2Dupe">Month 2</h3>
+            <h4>Work Days</h4>
+            <input type="number" id="m2AvailableDays" placeholder="Days">
+            <h4>SNAP - ABCDE</h4>
+            <input type="number" id="m2Time" placeholder="Assigned">
+            <input type="number" id="m2Late" placeholder="Late">
+            <input type="number" id="m2reassigned" placeholder="Reassigned">
+            <div id='month2-time'>0.00%</div>
+            <h4>SNAP - Exp.</h4>
+            <input type="number" id="m2TimeEXP" placeholder="Assigned">
+            <input type="number" id="m2LateEXP" placeholder="Late">
+            <input type="number" id="m2EXPReassigned" placeholder="Reassigned">
+            <div id='month2-timeEXP'>0.00%</div>
+            <h4>SAR/Chng/MP</h4>
+            <input type="number" id="m2TimeSAR" placeholder="Assigned">
+            <input type="number" id="m2LateSAR" placeholder="Late">
+            <input type="number" id="m2reassignedSAR" placeholder="Reassigned">
+            <div id='month2-SARtime'>0.00%</div>
+            <h4>Traditional Med.</h4>
+            <input type="number" id="m2MCTime" placeholder="Assigned">
+            <input type="number" id="m2MCLate" placeholder="Late">
+            <input type="number" id="m2MCReassigned" placeholder="Reassigned">
+            <div id='month2-MCtime'>0.00%</div>
+            <h4>MAGI</h4>
+            <input type="number" id="m2MAGITime" placeholder="Assigned">
+            <input type="number" id="m2MAGILate" placeholder="Late">
+            <input type="number" id="m2MAGIReassigned" placeholder="Reassigned">
+            <div id='month2-MAGItime'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m2TEATime" placeholder="Assigned">
+            <input type="number" id="m2TEALate" placeholder="Late">
+            <input type="number" id="m2TEAReassigned" placeholder="Reassigned">
+            <div id='month2-TEAtime'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-timer-outline icon-big"></i>
+            <h3 id="m3Dupe">Month 3</h3>
+            <h4>Work Days</h4>
+            <input type="number" id="m3AvailableDays" placeholder="Days">
+            <h4>SNAP - ABCDE</h4>
+            <input type="number" id="m3Time" placeholder="Assigned">
+            <input type="number" id="m3Late" placeholder="Late">
+            <input type="number" id="m3reassigned" placeholder="Reassigned">
+            <div id='month3-time'>0.00%</div>
+            <h4>SNAP - Exp.</h4>
+            <input type="number" id="m3TimeEXP" placeholder="Assigned">
+            <input type="number" id="m3LateEXP" placeholder="Late">
+            <input type="number" id="m3EXPReassigned" placeholder="Reassigned">
+            <div id='month3-timeEXP'>0.00%</div>
+            <h4>SAR/Chng/MP</h4>
+            <input type="number" id="m3TimeSAR" placeholder="Assigned">
+            <input type="number" id="m3LateSAR" placeholder="Late">
+            <input type="number" id="m3reassignedSAR" placeholder="Reassigned">
+            <div id='month3-SARtime'>0.00%</div>
+            <h4>Traditional Med.</h4>
+            <input type="number" id="m3MCTime" placeholder="Assigned">
+            <input type="number" id="m3MCLate" placeholder="Late">
+            <input type="number" id="m3MCReassigned" placeholder="Reassigned">
+            <div id='month3-MCtime'>0.00%</div>
+            <h4>MAGI</h4>
+            <input type="number" id="m3MAGITime" placeholder="Assigned">
+            <input type="number" id="m3MAGILate" placeholder="Late">
+            <input type="number" id="m3MAGIReassigned" placeholder="Reassigned">
+            <div id='month3-MAGItime'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m3TEATime" placeholder="Assigned">
+            <input type="number" id="m3TEALate" placeholder="Late">
+            <input type="number" id="m3TEAReassigned" placeholder="Reassigned">
+            <div id='month3-TEAtime'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-stopwatch-outline icon-big"></i>
+            <h3 id="m4Dupe">Month 4</h3>
+            <h4>Work Days</h4>
+            <input type="number" id="m4AvailableDays" placeholder="Days">
+            <h4>SNAP - ABCDE</h4>
+            <input type="number" id="m4Time" placeholder="Assigned">
+            <input type="number" id="m4Late" placeholder="Late">
+            <input type="number" id="m4reassigned" placeholder="Reassigned">
+            <div id='month4-time'>0.00%</div>
+            <h4>SNAP - Exp.</h4>
+            <input type="number" id="m4TimeEXP" placeholder="Assigned">
+            <input type="number" id="m4LateEXP" placeholder="Late">
+            <input type="number" id="m4EXPReassigned" placeholder="Reassigned">
+            <div id='month4-timeEXP'>0.00%</div>
+            <h4>SAR/Chng/MP</h4>
+            <input type="number" id="m4TimeSAR" placeholder="Assigned">
+            <input type="number" id="m4LateSAR" placeholder="Late">
+            <input type="number" id="m4reassignedSAR" placeholder="Reassigned">
+            <div id='month4-SARtime'>0.00%</div>
+            <h4>Traditional Med.</h4>
+            <input type="number" id="m4MCTime" placeholder="Assigned">
+            <input type="number" id="m4MCLate" placeholder="Late">
+            <input type="number" id="m4MCReassigned" placeholder="Reassigned">
+            <div id='month4-MCtime'>0.00%</div>
+            <h4>MAGI</h4>
+            <input type="number" id="m4MAGITime" placeholder="Assigned">
+            <input type="number" id="m4MAGILate" placeholder="Late">
+            <input type="number" id="m4MAGIReassigned" placeholder="Reassigned">
+            <div id='month4-MAGItime'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m4TEATime" placeholder="Assigned">
+            <input type="number" id="m4TEALate" placeholder="Late">
+            <input type="number" id="m4TEAReassigned" placeholder="Reassigned">
+            <div id='month4-TEAtime'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-time-outline icon-big"></i>
+            <h3 id="m5Dupe">Month 5</h3>
+            <h4>Work Days</h4>
+            <input type="number" id="m5AvailableDays" placeholder="Days">
+            <h4>SNAP - ABCDE</h4>
+            <input type="number" id="m5Time" placeholder="Assigned">
+            <input type="number" id="m5Late" placeholder="Late">
+            <input type="number" id="m5reassigned" placeholder="Reassigned">
+            <div id='month5-time'>0.00%</div>
+            <h4>SNAP - Exp.</h4>
+            <input type="number" id="m5TimeEXP" placeholder="Assigned">
+            <input type="number" id="m5LateEXP" placeholder="Late">
+            <input type="number" id="m5EXPReassigned" placeholder="Reassigned">
+            <div id='month5-timeEXP'>0.00%</div>
+            <h4>SAR/Chng/MP</h4>
+            <input type="number" id="m5TimeSAR" placeholder="Assigned">
+            <input type="number" id="m5LateSAR" placeholder="Late">
+            <input type="number" id="m5reassignedSAR" placeholder="Reassigned">
+            <div id='month5-SARtime'>0.00%</div>
+            <h4>Traditional Med.</h4>
+            <input type="number" id="m5MCTime" placeholder="Assigned">
+            <input type="number" id="m5MCLate" placeholder="Late">
+            <input type="number" id="m5MCReassigned" placeholder="Reassigned">
+            <div id='month5-MCtime'>0.00%</div>
+            <h4>MAGI</h4>
+            <input type="number" id="m5MAGITime" placeholder="Assigned">
+            <input type="number" id="m5MAGILate" placeholder="Late">
+            <input type="number" id="m5MAGIReassigned" placeholder="Reassigned">
+            <div id='month5-MAGItime'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m5TEATime" placeholder="Assigned">
+            <input type="number" id="m5TEALate" placeholder="Late">
+            <input type="number" id="m5TEAReassigned" placeholder="Reassigned">
+            <div id='month5-TEAtime'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-alarm-outline icon-big"></i>
+            <h3 id="m6Dupe">Month 6</h3>
+            <h4>Work Days</h4>
+            <input type="number" id="m6AvailableDays" placeholder="Days">
+            <h4>SNAP - ABCDE</h4>
+            <input type="number" id="m6Time" placeholder="Assigned">
+            <input type="number" id="m6Late" placeholder="Late">
+            <input type="number" id="m6reassigned" placeholder="Reassigned">
+            <div id='month6-time'>0.00%</div>
+            <h4>SNAP - Exp.</h4>
+            <input type="number" id="m6TimeEXP" placeholder="Assigned">
+            <input type="number" id="m6LateEXP" placeholder="Late">
+            <input type="number" id="m6EXPReassigned" placeholder="Reassigned">
+            <div id='month6-timeEXP'>0.00%</div>
+            <h4>SAR/Chng/MP</h4>
+            <input type="number" id="m6TimeSAR" placeholder="Assigned">
+            <input type="number" id="m6LateSAR" placeholder="Late">
+            <input type="number" id="m6reassignedSAR" placeholder="Reassigned">
+            <div id='month6-SARtime'>0.00%</div>
+            <h4>Traditional Med.</h4>
+            <input type="number" id="m6MCTime" placeholder="Assigned">
+            <input type="number" id="m6MCLate" placeholder="Late">
+            <input type="number" id="m6MCReassigned" placeholder="Reassigned">
+            <div id='month6-MCtime'>0.00%</div>
+            <h4>MAGI</h4>
+            <input type="number" id="m6MAGITime" placeholder="Assigned">
+            <input type="number" id="m6MAGILate" placeholder="Late">
+            <input type="number" id="m6MAGIReassigned" placeholder="Reassigned">
+            <div id='month6-MAGItime'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m6TEATime" placeholder="Assigned">
+            <input type="number" id="m6TEALate" placeholder="Late">
+            <input type="number" id="m6TEAReassigned" placeholder="Reassigned">
+            <div id='month6-TEAtime'>0.00%</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-time-outline icon-big"></i>
+            <h3 id="m7Dupe">Month 7</h3>
+            <h4>Work Days</h4>
+            <input type="number" id="m7AvailableDays" placeholder="Days">
+            <h4>SNAP - ABCDE</h4>
+            <input type="number" id="m7Time" placeholder="Assigned">
+            <input type="number" id="m7Late" placeholder="Late">
+            <input type="number" id="m7reassigned" placeholder="Reassigned">
+            <div id='month7-time'>0.00%</div>
+            <h4>SNAP - Exp.</h4>
+            <input type="number" id="m7TimeEXP" placeholder="Assigned">
+            <input type="number" id="m7LateEXP" placeholder="Late">
+            <input type="number" id="m7EXPReassigned" placeholder="Reassigned">
+            <div id='month7-timeEXP'>0.00%</div>
+            <h4>SAR/Chng/MP</h4>
+            <input type="number" id="m7TimeSAR" placeholder="Assigned">
+            <input type="number" id="m7LateSAR" placeholder="Late">
+            <input type="number" id="m7reassignedSAR" placeholder="Reassigned">
+            <div id='month7-SARtime'>0.00%</div>
+            <h4>Traditional Med.</h4>
+            <input type="number" id="m7MCTime" placeholder="Assigned">
+            <input type="number" id="m7MCLate" placeholder="Late">
+            <input type="number" id="m7MCReassigned" placeholder="Reassigned">
+            <div id='month7-MCtime'>0.00%</div>
+            <h4>MAGI</h4>
+            <input type="number" id="m7MAGITime" placeholder="Assigned">
+            <input type="number" id="m7MAGILate" placeholder="Late">
+            <input type="number" id="m7MAGIReassigned" placeholder="Reassigned">
+            <div id='month7-MAGItime'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m7TEATime" placeholder="Assigned">
+            <input type="number" id="m7TEALate" placeholder="Late">
+            <input type="number" id="m7TEAReassigned" placeholder="Reassigned">
+            <div id='month7-TEAtime'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-stopwatch-outline icon-big"></i>
+            <h3 id="m8Dupe">Month 8</h3>
+            <h4>Work Days</h4>
+            <input type="number" id="m8AvailableDays" placeholder="Days">
+            <h4>SNAP - ABCDE</h4>
+            <input type="number" id="m8Time" placeholder="Assigned">
+            <input type="number" id="m8Late" placeholder="Late">
+            <input type="number" id="m8reassigned" placeholder="Reassigned">
+            <div id='month8-time'>0.00%</div>
+            <h4>SNAP - Exp.</h4>
+            <input type="number" id="m8TimeEXP" placeholder="Assigned">
+            <input type="number" id="m8LateEXP" placeholder="Late">
+            <input type="number" id="m8EXPReassigned" placeholder="Reassigned">
+            <div id='month8-timeEXP'>0.00%</div>
+            <h4>SAR/Chng/MP</h4>
+            <input type="number" id="m8TimeSAR" placeholder="Assigned">
+            <input type="number" id="m8LateSAR" placeholder="Late">
+            <input type="number" id="m8reassignedSAR" placeholder="Reassigned">
+            <div id='month8-SARtime'>0.00%</div>
+            <h4>Traditional Med.</h4>
+            <input type="number" id="m8MCTime" placeholder="Assigned">
+            <input type="number" id="m8MCLate" placeholder="Late">
+            <input type="number" id="m8MCReassigned" placeholder="Reassigned">
+            <div id='month8-MCtime'>0.00%</div>
+            <h4>MAGI</h4>
+            <input type="number" id="m8MAGITime" placeholder="Assigned">
+            <input type="number" id="m8MAGILate" placeholder="Late">
+            <input type="number" id="m8MAGIReassigned" placeholder="Reassigned">
+            <div id='month8-MAGItime'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m8TEATime" placeholder="Assigned">
+            <input type="number" id="m8TEALate" placeholder="Late">
+            <input type="number" id="m8TEAReassigned" placeholder="Reassigned">
+            <div id='month8-TEAtime'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-alarm-outline icon-big"></i>
+            <h3 id="m9Dupe">Month 9</h3>
+            <h4>Work Days</h4>
+            <input type="number" id="m9AvailableDays" placeholder="Days">
+            <h4>SNAP - ABCDE</h4>
+            <input type="number" id="m9Time" placeholder="Assigned">
+            <input type="number" id="m9Late" placeholder="Late">
+            <input type="number" id="m9reassigned" placeholder="Reassigned">
+            <div id='month9-time'>0.00%</div>
+            <h4>SNAP - Exp.</h4>
+            <input type="number" id="m9TimeEXP" placeholder="Assigned">
+            <input type="number" id="m9LateEXP" placeholder="Late">
+            <input type="number" id="m9EXPReassigned" placeholder="Reassigned">
+            <div id='month9-timeEXP'>0.00%</div>
+            <h4>SAR/Chng/MP</h4>
+            <input type="number" id="m9TimeSAR" placeholder="Assigned">
+            <input type="number" id="m9LateSAR" placeholder="Late">
+            <input type="number" id="m9reassignedSAR" placeholder="Reassigned">
+            <div id='month9-SARtime'>0.00%</div>
+            <h4>Traditional Med.</h4>
+            <input type="number" id="m9MCTime" placeholder="Assigned">
+            <input type="number" id="m9MCLate" placeholder="Late">
+            <input type="number" id="m9MCReassigned" placeholder="Reassigned">
+            <div id='month9-MCtime'>0.00%</div>
+            <h4>MAGI</h4>
+            <input type="number" id="m9MAGITime" placeholder="Assigned">
+            <input type="number" id="m9MAGILate" placeholder="Late">
+            <input type="number" id="m9MAGIReassigned" placeholder="Reassigned">
+            <div id='month9-MAGItime'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m9TEATime" placeholder="Assigned">
+            <input type="number" id="m9TEALate" placeholder="Late">
+            <input type="number" id="m9TEAReassigned" placeholder="Reassigned">
+            <div id='month9-TEAtime'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-refresh-outline icon-big"></i>
+            <h3 id="m10Dupe">Month 10</h3>
+            <h4>Work Days</h4>
+            <input type="number" id="m10AvailableDays" placeholder="Days">
+            <h4>SNAP - ABCDE</h4>
+            <input type="number" id="m10Time" placeholder="Assigned">
+            <input type="number" id="m10Late" placeholder="Late">
+            <input type="number" id="m10reassigned" placeholder="Reassigned">
+            <div id='month10-time'>0.00%</div>
+            <h4>SNAP - Exp.</h4>
+            <input type="number" id="m10TimeEXP" placeholder="Assigned">
+            <input type="number" id="m10LateEXP" placeholder="Late">
+            <input type="number" id="m10EXPReassigned" placeholder="Reassigned">
+            <div id='month10-timeEXP'>0.00%</div>
+            <h4>SAR/Chng/MP</h4>
+            <input type="number" id="m10TimeSAR" placeholder="Assigned">
+            <input type="number" id="m10LateSAR" placeholder="Late">
+            <input type="number" id="m10reassignedSAR" placeholder="Reassigned">
+            <div id='month10-SARtime'>0.00%</div>
+            <h4>Traditional Med.</h4>
+            <input type="number" id="m10MCTime" placeholder="Assigned">
+            <input type="number" id="m10MCLate" placeholder="Late">
+            <input type="number" id="m10MCReassigned" placeholder="Reassigned">
+            <div id='month10-MCtime'>0.00%</div>
+            <h4>MAGI</h4>
+            <input type="number" id="m10MAGITime" placeholder="Assigned">
+            <input type="number" id="m10MAGILate" placeholder="Late">
+            <input type="number" id="m10MAGIReassigned" placeholder="Reassigned">
+            <div id='month10-MAGItime'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m10TEATime" placeholder="Assigned">
+            <input type="number" id="m10TEALate" placeholder="Late">
+            <input type="number" id="m10TEAReassigned" placeholder="Reassigned">
+            <div id='month10-TEAtime'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-pie-outline icon-big"></i>
+            <h3 id="m11Dupe">Month 11</h3>
+            <h4>Work Days</h4>
+            <input type="number" id="m11AvailableDays" placeholder="Days">
+            <h4>SNAP - ABCDE</h4>
+            <input type="number" id="m11Time" placeholder="Assigned">
+            <input type="number" id="m11Late" placeholder="Late">
+            <input type="number" id="m11reassigned" placeholder="Reassigned">
+            <div id='month11-time'>0.00%</div>
+            <h4>SNAP - Exp.</h4>
+            <input type="number" id="m11TimeEXP" placeholder="Assigned">
+            <input type="number" id="m11LateEXP" placeholder="Late">
+            <input type="number" id="m11EXPReassigned" placeholder="Reassigned">
+            <div id='month11-timeEXP'>0.00%</div>
+            <h4>SAR/Chng/MP</h4>
+            <input type="number" id="m11TimeSAR" placeholder="Assigned">
+            <input type="number" id="m11LateSAR" placeholder="Late">
+            <input type="number" id="m11reassignedSAR" placeholder="Reassigned">
+            <div id='month11-SARtime'>0.00%</div>
+            <h4>Traditional Med.</h4>
+            <input type="number" id="m11MCTime" placeholder="Assigned">
+            <input type="number" id="m11MCLate" placeholder="Late">
+            <input type="number" id="m11MCReassigned" placeholder="Reassigned">
+            <div id='month11-MCtime'>0.00%</div>
+            <h4>MAGI</h4>
+            <input type="number" id="m11MAGITime" placeholder="Assigned">
+            <input type="number" id="m11MAGILate" placeholder="Late">
+            <input type="number" id="m11MAGIReassigned" placeholder="Reassigned">
+            <div id='month11-MAGItime'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m11TEATime" placeholder="Assigned">
+            <input type="number" id="m11TEALate" placeholder="Late">
+            <input type="number" id="m11TEAReassigned" placeholder="Reassigned">
+            <div id='month11-TEAtime'>0.00%</div>
+        </div>
+        <div class="col span-1-of-6 box">
+            <i class="ion-ios-timer-outline icon-big"></i>
+            <h3 id="m12Dupe">Month 12</h3>
+            <h4>Work Days</h4>
+            <input type="number" id="m12AvailableDays" placeholder="Days">
+            <h4>SNAP - ABCDE</h4>
+            <input type="number" id="m12Time" placeholder="Assigned">
+            <input type="number" id="m12Late" placeholder="Late">
+            <input type="number" id="m12reassigned" placeholder="Reassigned">
+            <div id='month12-time'>0.00%</div>
+            <h4>SNAP - Exp.</h4>
+            <input type="number" id="m12TimeEXP" placeholder="Assigned">
+            <input type="number" id="m12LateEXP" placeholder="Late">
+            <input type="number" id="m12EXPReassigned" placeholder="Reassigned">
+            <div id='month12-timeEXP'>0.00%</div>
+            <h4>SAR/Chng/MP</h4>
+            <input type="number" id="m12TimeSAR" placeholder="Assigned">
+            <input type="number" id="m12LateSAR" placeholder="Late">
+            <input type="number" id="m12reassignedSAR" placeholder="Reassigned">
+            <div id='month12-SARtime'>0.00%</div>
+            <h4>Traditional Med.</h4>
+            <input type="number" id="m12MCTime" placeholder="Assigned">
+            <input type="number" id="m12MCLate" placeholder="Late">
+            <input type="number" id="m12MCReassigned" placeholder="Reassigned">
+            <div id='month12-MCtime'>0.00%</div>
+            <h4>MAGI</h4>
+            <input type="number" id="m12MAGITime" placeholder="Assigned">
+            <input type="number" id="m12MAGILate" placeholder="Late">
+            <input type="number" id="m12MAGIReassigned" placeholder="Reassigned">
+            <div id='month12-MAGItime'>0.00%</div>
+            <h4>TEA</h4>
+            <input type="number" id="m12TEATime" placeholder="Assigned">
+            <input type="number" id="m12TEALate" placeholder="Late">
+            <input type="number" id="m12TEAReassigned" placeholder="Reassigned">
+            <div id='month12-TEAtime'>0.00%</div>
+        </div>
+        <div>
+        </div>
+    </div>
+
+    <a id="caseManagement-button" align="center" style="width: 100%" class="btn btn-full" href="#caseManagement"
+       onclick="w3.hide('#timeliness'), w3.show('#caseManagement')" style="margin-top: 50px">Move On</a>
+    <a id="caseManagement2-button" class="btn btn-full" href="#buttons"
+       onclick="w3.hide('#timeliness'), w3.show('#buttons')" style="margin-top: 50px">Done</a>
+</div>
+<div class="row" id="caseManagement">
+    <div class="col span-1-of-1 box">
+        <h2>Case Management</h2>
+        <p>1. Reviews documented requests and assesses family circumstances to insure the individual/family applies for
+            and/or receives all DHS services for which they are eligible.<br>
+            <textarea type="string" class="cm1TextBox" id="cm1TextBox" placeholder="Type Here"
+                      style="height: 100px; width: 100%"></textarea>
+            <select id="cm1Set" name="cm1" placeholder="Rating" style="margin-bottom: 5px; width: auto">
+                <option value="0" selected>Rating</option>
+                <option value="1">&#x2605</option>
+                <option value="2">&#x2605 &#x2605</option>
+                <option value="3">&#x2605 &#x2605 &#x2605</option>
+<!--                <option value="4">&#x2605 &#x2605 &#x2605 &#x2605</option>-->
+            </select>
+        </p>
+        <p>2. Evaluates and resolves all discrepancies in case records and/or reports timely<br>
+            <textarea type="string" class="cmTextBox" id="cm2TextBox" placeholder="Type Here"
+                      style="height: 100px; width: 100%"></textarea>
+            <select id="cm2Set" name="cm1" placeholder="Rating" style="margin-bottom: 5px; width: auto">
+                <option value="0" selected>Rating</option>
+                <option value="1">&#x2605</option>
+                <option value="2">&#x2605 &#x2605</option>
+                <option value="3">&#x2605 &#x2605 &#x2605</option>
+<!--                <option value="4">&#x2605 &#x2605 &#x2605 &#x2605</option>-->
+            </select>
+        </p>
+        <p>3. Maintains an organized workflow.<br>
+            <textarea type="string" class="cmTextBox" id="cm3TextBox" placeholder="Type Here"
+                      style="height: 100px; width: 100%"></textarea>
+            <select id="cm3Set" name="cm1" placeholder="Rating" style="margin-bottom: 5px; width: auto">
+                <option value="0" selected>Rating</option>
+                <option value="1">&#x2605</option>
+                <option value="2">&#x2605 &#x2605</option>
+                <option value="3">&#x2605 &#x2605 &#x2605</option>
+<!--                <option value="4">&#x2605 &#x2605 &#x2605 &#x2605</option>-->
+            </select>
+        </p>
+        <p>4. Logs, updates, and maintains pending case actions as required<br>
+            <textarea type="string" class="cmTextBox" id="cm4TextBox" placeholder="Type Here"
+                      style="height: 100px; width: 100%"></textarea>
+            <select id="cm4Set" name="cm1" placeholder="Rating" style="margin-bottom: 5px; width: auto">
+                <option value="0" selected>Rating</option>
+                <option value="1">&#x2605</option>
+                <option value="2">&#x2605 &#x2605</option>
+                <option value="3">&#x2605 &#x2605 &#x2605</option>
+<!--                <option value="4">&#x2605 &#x2605 &#x2605 &#x2605</option>-->
+            </select>
+        </p>
+        <p>5. Documents/narrates all eligibility factors and pertiinent information timely<br>
+            <textarea type="string" class="cmTextBox" id="cm5TextBox" placeholder="Type Here"
+                      style="height: 100px; width: 100%"></textarea>
+            <select id="cm5Set" name="cm1" placeholder="Rating" style="margin-bottom: 5px; width: auto">
+                <option value="0" selected>Rating</option>
+                <option value="1">&#x2605</option>
+                <option value="2">&#x2605 &#x2605</option>
+                <option value="3">&#x2605 &#x2605 &#x2605</option>
+<!--                <option value="4">&#x2605 &#x2605 &#x2605 &#x2605</option>-->
+            </select>
+        </p>
+        <p>6. Responds to client inquiries and phone calls timely and accurately<br>
+            <textarea type="string" class="cmTextBox" id="cm6TextBox" placeholder="Type Here"
+                      style="height: 100px; width: 100%"></textarea>
+            <select id="cm6Set" name="cm1" placeholder="Rating" style="margin-bottom: 5px; width: auto">
+                <option value="0" selected>Rating</option>
+                <option value="1">&#x2605</option>
+                <option value="2">&#x2605 &#x2605</option>
+                <option value="3">&#x2605 &#x2605 &#x2605</option>
+<!--                <option value="4">&#x2605 &#x2605 &#x2605 &#x2605</option>-->
+            </select>
+        </p>
+        <p>7. Provides mentoring/technical assistance to other county office staff<br>
+            <textarea type="string" class="cmTextBox" id="cm7TextBox" placeholder="Type Here"
+                      style="height: 100px; width: 100%"></textarea>
+            <select id="cm7Set" name="cm1" placeholder="Rating" style="margin-bottom: 5px; width: auto">
+                <option value="0" selected>Rating</option>
+                <option value="1">&#x2605</option>
+                <option value="2">&#x2605 &#x2605</option>
+                <option value="3">&#x2605 &#x2605 &#x2605</option>
+<!--                <option value="4">&#x2605 &#x2605 &#x2605 &#x2605</option>-->
+            </select>
+        </p>
+        <p>8. Conducts second party reviews accurately and timely according to Division/Office policies and
+            procedures<br>
+            <textarea type="string" class="cmTextBox" id="cm8TextBox" placeholder="Type Here"
+                      style="height: 100px; width: 100%"></textarea>
+            <select id="cm8Set" name="cm1" placeholder="Rating" style="margin-bottom: 5px; width: auto">
+                <option value="0" selected>Rating</option>
+                <option value="1">&#x2605</option>
+                <option value="2">&#x2605 &#x2605</option>
+                <option value="3">&#x2605 &#x2605 &#x2605</option>
+<!--                <option value="4">&#x2605 &#x2605 &#x2605 &#x2605</option>-->
+            </select>
+        </p>
+        <p>9. Assists with covering additional caseloads due to vacancies/absences and/or area projects<br>
+            <textarea type="string" class="cmTextBox" id="cm9TextBox" placeholder="Type Here"
+                      style="height: 100px; width: 100%"></textarea>
+            <select id="cm9Set" name="cm1" placeholder="Rating" style="margin-bottom: 5px; width: auto">
+                <option value="0" selected>Rating</option>
+                <option value="1">&#x2605</option>
+                <option value="2">&#x2605 &#x2605</option>
+                <option value="3">&#x2605 &#x2605 &#x2605</option>
+<!--                <option value="4">&#x2605 &#x2605 &#x2605 &#x2605</option>-->
+            </select>
+        </p>
+        <p>10. Establishes and maintains electronic case records (# scanned and % correct during rating period)<br>
+            <textarea type="string" class="cmTextBox" id="cm10TextBox" placeholder="Type Here"
+                      style="height: 100px; width: 100%"></textarea>
+            <select id="cm10Set" name="cm1" placeholder="Rating" style="margin-bottom: 5px; width: auto">
+                <option value="0" selected>Rating</option>
+                <option value="1">&#x2605</option>
+                <option value="2">&#x2605 &#x2605</option>
+                <option value="3">&#x2605 &#x2605 &#x2605</option>
+<!--                <option value="4">&#x2605 &#x2605 &#x2605 &#x2605</option>-->
+            </select>
+        </p>
+        <p>11. Processes over/under payments, inquiries, disqualifactions, correspondence, and communications with a 95%
+            accuracy rate (includes transfer requests, fair hearing packets, client notices, emails from supervisors,
+            ACD reports & judgments, etc.)<br>
+            <textarea type="string" class="cmTextBox" id="cm11TextBox" placeholder="Type Here"
+                      style="height: 100px; width: 100%"></textarea>
+            <select id="cm11Set" name="cm1" placeholder="Rating" style="margin-bottom: 5px; width: auto">
+                <option value="0" selected>Rating</option>
+                <option value="1">&#x2605</option>
+                <option value="2">&#x2605 &#x2605</option>
+                <option value="3">&#x2605 &#x2605 &#x2605</option>
+<!--                <option value="4">&#x2605 &#x2605 &#x2605 &#x2605</option>-->
+            </select>
+        </p>
+        <p>12. Processes all over/under payments, inquiries, disqualifications, correspondence, and communications with
+            a 95% timeliness rate (includes transfer requests, fair hearing packets, client notices, emails from ADC
+            reports and judgments, etc.<br>
+            <textarea type="string" class="cmTextBox" id="cm12TextBox" placeholder="Type Here"
+                      style="height: 100px; width: 100%"></textarea>
+            <select id="cm12Set" name="cm1" placeholder="Rating" style="margin-bottom: 5px; width: auto">
+                <option value="0" selected>Rating</option>
+                <option value="1">&#x2605</option>
+                <option value="2">&#x2605 &#x2605</option>
+                <option value="3">&#x2605 &#x2605 &#x2605</option>
+<!--                <option value="4">&#x2605 &#x2605 &#x2605 &#x2605</option>-->
+            </select>
+        </p>
+
+
+    </div>
+
+    <a id="buttons-button" align="center" style="width: 100%" class="btn btn-full" href="#buttons"
+       onclick="w3.hide('#caseManagement'), w3.show('#buttons')" style="margin-top: 50px">Done</a>
+</div>
+
+<div class="row" id="buttons" align="center">
+    <h4>Use These Buttons to go Back to Data Entry</h4><br>
+    <a class="btn btn-full" style="width: 30%" href="#accuracy"
+       onclick="w3.show('#accuracy'), w3.show('#time2-button'), w3.hide('#time-button'), w3.hide('#buttons'), w3.show('#employee-section')"
+       style="margin-top: 50px">Show Accuracy</a>
+    <a class="btn btn-full" style="width: 30%" href="#timeliness"
+       onclick="w3.show('#timeliness'), w3.show('#caseManagement2-button'), w3.hide('#caseManagement-button'), w3.hide('#buttons')"
+       style="margin-top: 50px">Show Timeliness</a>
+    <a class="btn btn-full" style="width: 30%" href="#caseManagement"
+       onclick="w3.show('#caseManagement'), w3.hide('#buttons')" style="margin-top: 50px">Show Case Management</a>
+    <br><br><br>
+    <h4>Or You Can Finish Up/Cancel Your Report</h4><br>
+    <a id="ok-button" style="width: 80%" class="btn btn-full" href="#PGCSReport"
+       onclick="w3.hide('#buttons'), w3.show('#pgcs-output'), w3.hide('#HIDEME'), w3.hide('#employee-section'), w3.hide('#html-title-bar'), runPgcsReport()"
+       style="margin-top: 50px">Run PGCS Report</a><br>
+    <a class="btn btn-ghost" style="text-align: center; width: 80%" href="index.html">Cancel - LOSE ALL DATA</a>
+</div>
+<div class="row" id="pgcs-output">
+    <div id="HIDEME">
+        <h2>Production Assessment:</h2> use this section to display detailed production output only data instead of
+        using it to capture data from the user. this will be based on what is entered in the itmeliness section like
+        before
+        <div class="row">
+            <div class="col span-1-of-6 box">
+                <i class="ion-ios-cog-outline icon-big"></i>
+                <h3 id="m1Dupe2">Month 1</h3>
+                <h4>Applications</h4>
+                <p id="month1-apps">---</p>
+                <p id="m1AppProdMet">---</p>
+                <h4>SR/CH/MP</h4>
+                <p id='month1-SRCMP'>---</p>
+                <p id="m1SRCMPProdMet">---</p>
+                <h4>MAGI</h4>
+                <p id='month1-MAGI'>---</p>
+                <p id="m1MAGIProdMet">---</p>
+            </div>
+            <div class="col span-1-of-6 box">
+                <i class="ion-ios-albums-outline icon-big"></i>
+                <h3 id="m2Dupe2">Month 2</h3>
+                <h4>Applications</h4>
+                <p id="month2-apps">---</p>
+                <p id="m2AppProdMet">---</p>
+                <h4>SR/CH/MP</h4>
+                <p id='month2-SRCMP'>---</p>
+                <p id="m2SRCMPProdMet">---</p>
+                <h4>MAGI</h4>
+                <p id='month2-MAGI'>---</p>
+                <p id="m2MAGIProdMet">---</p>
+            </div>
+            <div class="col span-1-of-6 box">
+                <i class="ion-ios-construct icon-big"></i>
+                <h3 id="m3Dupe2">Month 3</h3>
+                <h4>Applications</h4>
+                <p id="month3-apps">---</p>
+                <p id="m3AppProdMet">---</p>
+                <h4>SR/CH/MP</h4>
+                <p id='month3-SRCMP'>---</p>
+                <p id="m3SRCMPProdMet">---</p>
+                <h4>MAGI</h4>
+                <p id='month3-MAGI'>---</p>
+                <p id="m3MAGIProdMet">---</p>
+            </div>
+            <div class="col span-1-of-6 box">
+                <i class="ion-ios-cut icon-big"></i>
+                <h3 id="m4Dupe2">Month 4</h3>
+                <h4>Applications</h4>
+                <p id="month4-apps">---</p>
+                <p id="m4AppProdMet">---</p>
+                <h4>SR/CH/MP</h4>
+                <p id='month4-SRCMP'>---</p>
+                <p id="m4SRCMPProdMet">---</p>
+                <h4>MAGI</h4>
+                <p id='month4-MAGI'>---</p>
+                <p id="m4MAGIProdMet">---</p>
+            </div>
+            <div class="col span-1-of-6 box">
+                <i class="ion-ios-hammer icon-big"></i>
+                <h3 id="m5Dupe2">Month 5</h3>
+                <h4>Applications</h4>
+                <p id="month5-apps">---</p>
+                <p id="m5AppProdMet">---</p>
+                <h4>SR/CH/MP</h4>
+                <p id='month5-SRCMP'>---</p>
+                <p id="m5SRCMPProdMet">---</p>
+                <h4>MAGI</h4>
+                <p id='month5-MAGI'>---</p>
+                <p id="m5MAGIProdMet">---</p>
+            </div>
+            <div class="col span-1-of-6 box">
+                <i class="ion-ios-print icon-big"></i>
+                <h3 id="m6Dupe2">Month 6</h3>
+                <h4>Applications</h4>
+                <p id="month6-apps">---</p>
+                <p id="m6AppProdMet">---</p>
+                <h4>SR/CH/MP</h4>
+                <p id='month6-SRCMP'>---</p>
+                <p id="m6SRCMPProdMet">---</p>
+                <h4>MAGI</h4>
+                <p id='month6-MAGI'>---</p>
+                <p id="m6MAGIProdMet">---</p>
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col span-1-of-6 box">
+                <i class="ion-ios-cut icon-big"></i>
+                <h3 id="m7Dupe2">Month 7</h3>
+                <h4>Applications</h4>
+                <p id="month7-apps">---</p>
+                <p id="m7AppProdMet">---</p>
+                <h4>SAR/Chng/MP</h4>
+                <p id='month7-SRCMP'>---</p>
+                <p id="m7SRCMPProdMet">---</p>
+                <h4>MAGI</h4>
+                <p id='month7-MAGI'>---</p>
+                <p id="m7MAGIProdMet">---</p>
+            </div>
+            <div class="col span-1-of-6 box">
+                <i class="ion-ios-hammer icon-big"></i>
+                <h3 id="m8Dupe2">Month 8</h3>
+                <h4>Applications</h4>
+                <p id="month8-apps">---</p>
+                <p id="m8AppProdMet">---</p>
+                <h4>SR/CH/MP</h4>
+                <p id='month8-SRCMP'>---</p>
+                <p id="m8SRCMPProdMet">---</p>
+                <h4>MAGI</h4>
+                <p id='month8-MAGI'>---</p>
+                <p id="m8MAGIProdMet">---</p>
+            </div>
+            <div class="col span-1-of-6 box">
+                <i class="ion-ios-print icon-big"></i>
+                <h3 id="m9Dupe2">Month 9</h3>
+                <h4>Applications</h4>
+                <p id="month9-apps">---</p>
+                <p id="m9AppProdMet">---</p>
+                <h4>SR/CH/MP</h4>
+                <p id='month9-SRCMP'>---</p>
+                <p id="m9SRCMPProdMet">---</p>
+                <h4>MAGI</h4>
+                <p id='month9-MAGI'>---</p>
+                <p id="m9MAGIProdMet">---</p>
+            </div>
+            <div class="col span-1-of-6 box">
+                <i class="ion-ios-cog-outline icon-big"></i>
+                <h3 id="m10Dupe2">Month 10</h3>
+                <h4>Applications</h4>
+                <p id="month10-apps">---</p>
+                <p id="m10AppProdMet">---</p>
+                <h4>SR/CH/MP</h4>
+                <p id='month10-SRCMP'>---</p>
+                <p id="m10SRCMPProdMet">---</p>
+                <h4>MAGI</h4>
+                <p id='month10-MAGI'>---</p>
+                <p id="m10MAGIProdMet">---</p>
+            </div>
+            <div class="col span-1-of-6 box">
+                <i class="ion-ios-albums-outline icon-big"></i>
+                <h3 id="m11Dupe2">Month 11</h3>
+                <h4>Applications</h4>
+                <p id="month11-apps">---</p>
+                <p id="m11AppProdMet">---</p>
+                <h4>SR/CH/MP</h4>
+                <p id='month11-SRCMP'>---</p>
+                <p id="m11SRCMPProdMet">---</p>
+                <h4>MAGI</h4>
+                <p id='month11-MAGI'>---</p>
+                <p id="m11MAGIProdMet">---</p>
+            </div>
+            <div class="col span-1-of-6 box">
+                <i class="ion-ios-construct icon-big"></i>
+                <h3 id="m12Dupe2">Month 12</h3>
+                <h4>Applications</h4>
+                <p id="month12-apps">---</p>
+                <p id="m12AppProdMet">---</p>
+                <h4>SR/CH/MP</h4>
+                <p id='month12-SRCMP'>---</p>
+                <p id="m12SRCMPProdMet">---</p>
+                <h4>MAGI</h4>
+                <p id='month12-MAGI'>---</p>
+                <p id="m12MAGIProdMet">---</p>
+            </div>
+        </div>
+    </div>
+    <h2 id="PGCSReport">PGCS Report</h2>
+    <H3 style="text-align: center; margin-bottom: 3px">Production</H3>
+    <div class="row">
+        <div class="col span-1-of-3 box">
+            <h4>Application Output</h4>
+            <div id="prodAppStarScore">---</div>
+            <div id="prodAppStarDescriptor">---</div>
+        </div>
+        <div class="col span-1-of-3 box">
+            <h4>SR/CH/MP Output</h4>
+            <div id="prodSARStarScore">---</div>
+            <div id="prodSARStarDescriptor">---</div>
+        </div>
+        <div class="col span-1-of-3 box">
+            <h4>MAGI Tasks Cleared</h4>
+            <div id="prodMAGIStarScore">---</div>
+            <div id="prodMAGIStarDescriptor">---</div>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col span-1-of-4 box">
+            <i class="ion-ios-checkmark-outline icon-big"></i>
+            <h3>Accuracy</h3>
+            <h4>SNAP</h4>
+            <div id="AccReviewed">---</div>
+            <div id="AccError">---</div>
+            <div id='AccuracyScore'>---</div>
+            <h4>MEDICAID</h4>
+            <div id="MCAccReviewed">---</div>
+            <div id="MCAccError">---</div>
+            <div id='MCAccuracyScore'>---</div>
+            <h4>TEA</h4>
+            <div id="TEAAccReviewed">---</div>
+            <div id="TEAAccError">---</div>
+            <div id='TEAAccuracyScore'>---</div>
+            <i class="ion-ios-save icon-big"></i>
+            <h3>Case Management</h3>
+            <h4>Rated Tasks</h4>
+            <div id="cmCounted">---</div>
+            <h4>Highest Rating</h4>
+            <div id="cmCeiling">---</div>
+            <h4>Lowest Rating</h4>
+            <div id='cmFloor'>---</div>
+            <h4>Overall Rating</h4>
+            <div id='cmFinal'>---</div>
+            <!--     CUTS OFF TEXT RESPON                   <div id="cmDescriptor" style="width: auto">---</div>-->
+        </div>
+
+        <div class="col span-1-of-4 box">
+            <i class="ion-ios-star icon-big"></i>
+            <h3>PGCS Score</h3>
+            <h4>SNAP</h4>
+            <div id="StarScore">---</div>
+            <div id="StarDescriptor">---</div>
+            <div id='AccuracyFinal'>---</div>
+            <h4>MEDICAID</h4>
+            <div id="MCStarScore">---</div>
+            <div id="MCStarDescriptor">---</div>
+            <div id='MCAccuracyFinal'>---</div>
+            <h4>TEA</h4>
+            <div id="TEAStarScore">---</div>
+            <div id="TEAStarDescriptor">---</div>
+            <div id='TEAAccuracyFinal'>---</div>
+
+        </div>
+        <div class="col span-1-of-4 box">
+            <i class="ion-ios-alarm-outline icon-big"></i>
+            <h3>Timeliness</h3>
+            <h4>SNAP - ABCDE</h4>
+            <div id="TimWorked">---</div>
+            <div id="TimLate">---</div>
+            <div id='TimeScore'>---</div>
+            <h4>SNAP - EXP</h4>
+            <div id="TimeWorkedEXP">---</div>
+            <div id="TimeLateEXP">---</div>
+            <div id='TimeEXPScore'>---</div>
+            <h4>SNAP - SR/CH/MP</h4>
+            <div id="TimeWorkedSAR">---</div>
+            <div id="TimeLateSAR">---</div>
+            <div id='TimeSARScore'>---</div>
+            <h4>TRADITIONAL MEDICAID</h4>
+            <div id="mcTimWorked">---</div>
+            <div id="mcTimLate">---</div>
+            <div id='mcTimeScore'>---</div>
+            <h4>MAGI</h4>
+            <div id="magiTimeWorked">---</div>
+            <div id="magiTimeLate">---</div>
+            <div id='magiTimeScore'>---</div>
+            <h4>TEA</h4>
+            <div id="TEATimWorked">---</div>
+            <div id="TEATimLate">---</div>
+            <div id='TEATimeScore'>---</div>
+        </div>
+        <div class="col span-1-of-4 box">
+            <i class="ion-ios-star icon-big"></i>
+            <h3>PGCS Score</h3>
+            <h4>SNAP - ABCDE</h4>
+            <div id="StarScoreTime">---</div>
+            <div id="StarDescriptorTime">---</div>
+            <div id='TimeFinal'>---</div>
+            <h4>SNAP - EXP</h4>
+            <div id="StarScoreTimeEXP">---</div>
+            <div id="StarDescriptorTimeEXP">---</div>
+            <div id='TimeEXPFinal'>---</div>
+            <h4>SNAP - SR/CH/MP</h4>
+            <div id="StarScoreTimeSAR">---</div>
+            <div id="StarDescriptorTimeSAR">---</div>
+            <div id='TimeSARFinal'>---</div>
+            <h4>TRADITIONAL MEDICAID</h4>
+            <div id="mcStarScoreTime">---</div>
+            <div id="mcStarDescriptorTime">---</div>
+            <div id='mcTimeFinal'>---</div>
+            <h4>MAGI</h4>
+            <div id="magiStarScoreTime">---</div>
+            <div id="magiStarDescriptorTime">---</div>
+            <div id='magiTimeFinal'>---</div>
+            <h4>TEA</h4>
+            <div id="TEAStarScoreTime">---</div>
+            <div id="TEAStarDescriptorTime">---</div>
+            <div id='TEATimeFinal'>---</div>
+        </div>
+
+    </div>
+    <!--<p style="page-break-after: always;">&nbsp;</p>-->
+
+    <h2>Keyed Data</h2>
+    <h3><i class="ion-ios-cash icon"></i> - Accuracy</h3>
+    <div class="row">
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m1Dupe3">Month 1</h5>
+            <P style="font-size: 70%" id="m1AccTable">DATA</P>
+            <P style="font-size: 70%" id="m1MedTable">DATA</P>
+            <P style="font-size: 70%" id="m1TeaTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m2Dupe3">Month 2</h5>
+            <P style="font-size: 70%" id="m2AccTable">DATA</P>
+            <P style="font-size: 70%" id="m2MedTable">DATA</P>
+            <P style="font-size: 70%" id="m2TeaTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m3Dupe3">Month 3</h5>
+            <P style="font-size: 70%" id="m3AccTable">DATA</P>
+            <P style="font-size: 70%" id="m3MedTable">DATA</P>
+            <P style="font-size: 70%" id="m3TeaTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m4Dupe3">Month 4</h5>
+            <P style="font-size: 70%" id="m4AccTable">DATA</P>
+            <P style="font-size: 70%" id="m4MedTable">DATA</P>
+            <P style="font-size: 70%" id="m4TeaTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m5Dupe3">Month 5</h5>
+            <P style="font-size: 70%" id="m5AccTable">DATA</P>
+            <P style="font-size: 70%" id="m5MedTable">DATA</P>
+            <P style="font-size: 70%" id="m5TeaTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m6Dupe3">Month 6</h5>
+            <P style="font-size: 70%" id="m6AccTable">DATA</P>
+            <P style="font-size: 70%" id="m6MedTable">DATA</P>
+            <P style="font-size: 70%" id="m6TeaTable">DATA</P>
+        </div>
+    </div>
+    <div class="row">
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m7Dupe3">Month 7</h5>
+            <P style="font-size: 70%" id="m7AccTable">DATA</P>
+            <P style="font-size: 70%" id="m7MedTable">DATA</P>
+            <P style="font-size: 70%" id="m7TeaTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m8Dupe3">Month 8</h5>
+            <P style="font-size: 70%" id="m8AccTable">DATA</P>
+            <P style="font-size: 70%" id="m8MedTable">DATA</P>
+            <P style="font-size: 70%" id="m8TeaTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m9Dupe3">Month 9</h5>
+            <P style="font-size: 70%" id="m9AccTable">DATA</P>
+            <P style="font-size: 70%" id="m9MedTable">DATA</P>
+            <P style="font-size: 70%" id="m9TeaTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m10Dupe3">Month 10</h5>
+            <P style="font-size: 70%" id="m10AccTable">DATA</P>
+            <P style="font-size: 70%" id="m10MedTable">DATA</P>
+            <P style="font-size: 70%" id="m10TeaTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m11Dupe3">Month 11</h5>
+            <P style="font-size: 70%" id="m11AccTable">DATA</P>
+            <P style="font-size: 70%" id="m11MedTable">DATA</P>
+            <P style="font-size: 70%" id="m11TeaTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m12Dupe3">Month 12</h5>
+            <P style="font-size: 70%" id="m12AccTable">DATA</P>
+            <P style="font-size: 70%" id="m12MedTable">DATA</P>
+            <P style="font-size: 70%" id="m12TeaTable">DATA</P>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <h3><i class="ion-ios-speedometer icon"></i> - Timeliness</h3>
+    <div class="row">
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m1Dupe4">Month 1</h5>
+            <P style="font-size: 70%" id="m1TimTable">DATA</P>
+            <P style="font-size: 70%" id="m1EXPTimTable">DATA</P>
+            <P style="font-size: 70%" id="m1SARTimTable">DATA</P>
+            <P style="font-size: 70%" id="m1MCTimTable">DATA</P>
+            <P style="font-size: 70%" id="m1MAGITimTable">DATA</P>
+            <P style="font-size: 70%" id="m1TEATimTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m2Dupe4">Month 2</h5>
+            <P style="font-size: 70%" id="m2TimTable">DATA</P>
+            <P style="font-size: 70%" id="m2EXPTimTable">DATA</P>
+            <P style="font-size: 70%" id="m2SARTimTable">DATA</P>
+            <P style="font-size: 70%" id="m2MCTimTable">DATA</P>
+            <P style="font-size: 70%" id="m2MAGITimTable">DATA</P>
+            <P style="font-size: 70%" id="m2TEATimTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m3Dupe4">Month 3</h5>
+            <P style="font-size: 70%" id="m3TimTable">DATA</P>
+            <P style="font-size: 70%" id="m3EXPTimTable">DATA</P>
+            <P style="font-size: 70%" id="m3SARTimTable">DATA</P>
+            <P style="font-size: 70%" id="m3MCTimTable">DATA</P>
+            <P style="font-size: 70%" id="m3MAGITimTable">DATA</P>
+            <P style="font-size: 70%" id="m3TEATimTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m4Dupe4">Month 4</h5>
+            <P style="font-size: 70%" id="m4TimTable">DATA</P>
+            <P style="font-size: 70%" id="m4EXPTimTable">DATA</P>
+            <P style="font-size: 70%" id="m4SARTimTable">DATA</P>
+            <P style="font-size: 70%" id="m4MCTimTable">DATA</P>
+            <P style="font-size: 70%" id="m4MAGITimTable">DATA</P>
+            <P style="font-size: 70%" id="m4TEATimTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m5Dupe4">Month 5</h5>
+            <P style="font-size: 70%" id="m5TimTable">DATA</P>
+            <P style="font-size: 70%" id="m5EXPTimTable">DATA</P>
+            <P style="font-size: 70%" id="m5SARTimTable">DATA</P>
+            <P style="font-size: 70%" id="m5MCTimTable">DATA</P>
+            <P style="font-size: 70%" id="m5MAGITimTable">DATA</P>
+            <P style="font-size: 70%" id="m5TEATimTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m6Dupe4">Month 6</h5>
+            <P style="font-size: 70%" id="m6TimTable">DATA</P>
+            <P style="font-size: 70%" id="m6EXPTimTable">DATA</P>
+            <P style="font-size: 70%" id="m6SARTimTable">DATA</P>
+            <P style="font-size: 70%" id="m6MCTimTable">DATA</P>
+            <P style="font-size: 70%" id="m6MAGITimTable">DATA</P>
+            <P style="font-size: 70%" id="m6TEATimTable">DATA</P>
+        </div>
+    </div>
+    <div class="row">
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m7Dupe4">Month 7</h5>
+            <P style="font-size: 70%" id="m7TimTable">DATA</P>
+            <P style="font-size: 70%" id="m7EXPTimTable">DATA</P>
+            <P style="font-size: 70%" id="m7SARTimTable">DATA</P>
+            <P style="font-size: 70%" id="m7MCTimTable">DATA</P>
+            <P style="font-size: 70%" id="m7MAGITimTable">DATA</P>
+            <P style="font-size: 70%" id="m7TEATimTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m8Dupe4">Month 8</h5>
+            <P style="font-size: 70%" id="m8TimTable">DATA</P>
+            <P style="font-size: 70%" id="m8EXPTimTable">DATA</P>
+            <P style="font-size: 70%" id="m8SARTimTable">DATA</P>
+            <P style="font-size: 70%" id="m8MCTimTable">DATA</P>
+            <P style="font-size: 70%" id="m8MAGITimTable">DATA</P>
+            <P style="font-size: 70%" id="m8TEATimTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m9Dupe4">Month 9</h5>
+            <P style="font-size: 70%" id="m9TimTable">DATA</P>
+            <P style="font-size: 70%" id="m9EXPTimTable">DATA</P>
+            <P style="font-size: 70%" id="m9SARTimTable">DATA</P>
+            <P style="font-size: 70%" id="m9MCTimTable">DATA</P>
+            <P style="font-size: 70%" id="m9MAGITimTable">DATA</P>
+            <P style="font-size: 70%" id="m9TEATimTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m10Dupe4">Month 10</h5>
+            <P style="font-size: 70%" id="m10TimTable">DATA</P>
+            <P style="font-size: 70%" id="m10EXPTimTable">DATA</P>
+            <P style="font-size: 70%" id="m10SARTimTable">DATA</P>
+            <P style="font-size: 70%" id="m10MCTimTable">DATA</P>
+            <P style="font-size: 70%" id="m10MAGITimTable">DATA</P>
+            <P style="font-size: 70%" id="m10TEATimTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m11Dupe4">Month 11</h5>
+            <P style="font-size: 70%" id="m11TimTable">DATA</P>
+            <P style="font-size: 70%" id="m11EXPTimTable">DATA</P>
+            <P style="font-size: 70%" id="m11SARTimTable">DATA</P>
+            <P style="font-size: 70%" id="m11MCTimTable">DATA</P>
+            <P style="font-size: 70%" id="m11MAGITimTable">DATA</P>
+            <P style="font-size: 70%" id="m11TEATimTable">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5 id="m12Dupe4">Month 12</h5>
+            <P style="font-size: 70%" id="m12TimTable">DATA</P>
+            <P style="font-size: 70%" id="m12EXPTimTable">DATA</P>
+            <P style="font-size: 70%" id="m12SARTimTable">DATA</P>
+            <P style="font-size: 70%" id="m12MCTimTable">DATA</P>
+            <P style="font-size: 70%" id="m12MAGITimTable">DATA</P>
+            <P style="font-size: 70%" id="m12TEATimTable">DATA</P>
+        </div>
+    </div>
+    <p style="page-break-after: always;">&nbsp;</p>
+    <h3><i class="ion-ios-build icon"></i> - Production</h3>
+    <div class="row">
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5>Month 1</h5>
+            <P style="font-size: 70%" id="m1PRODapps">DATA</P>
+            <P style="font-size: 70%" id="m1SRCMPapps">DATA</P>
+            <P style="font-size: 70%" id="m1MAGIapps">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5>Month 2</h5>
+            <P style="font-size: 70%" id="m2PRODapps">DATA</P>
+            <P style="font-size: 70%" id="m2SRCMPapps">DATA</P>
+            <P style="font-size: 70%" id="m2MAGIapps">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5>Month 3</h5>
+            <P style="font-size: 70%" id="m3PRODapps">DATA</P>
+            <P style="font-size: 70%" id="m3SRCMPapps">DATA</P>
+            <P style="font-size: 70%" id="m3MAGIapps">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5>Month 4</h5>
+            <P style="font-size: 70%" id="m4PRODapps">DATA</P>
+            <P style="font-size: 70%" id="m4SRCMPapps">DATA</P>
+            <P style="font-size: 70%" id="m4MAGIapps">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5>Month 5</h5>
+            <P style="font-size: 70%" id="m5PRODapps">DATA</P>
+            <P style="font-size: 70%" id="m5SRCMPapps">DATA</P>
+            <P style="font-size: 70%" id="m5MAGIapps">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5>Month 6</h5>
+            <P style="font-size: 70%" id="m6PRODapps">DATA</P>
+            <P style="font-size: 70%" id="m6SRCMPapps">DATA</P>
+            <P style="font-size: 70%" id="m6MAGIapps">DATA</P>
+        </div>
+    </div>
+    <div class="row">
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5>Month 7</h5>
+            <P style="font-size: 70%" id="m7PRODapps">DATA</P>
+            <P style="font-size: 70%" id="m7SRCMPapps">DATA</P>
+            <P style="font-size: 70%" id="m7MAGIapps">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5>Month 8</h5>
+            <P style="font-size: 70%" id="m8PRODapps">DATA</P>
+            <P style="font-size: 70%" id="m8SRCMPapps">DATA</P>
+            <P style="font-size: 70%" id="m8MAGIapps">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5>Month 9</h5>
+            <P style="font-size: 70%" id="m9PRODapps">DATA</P>
+            <P style="font-size: 70%" id="m9SRCMPapps">DATA</P>
+            <P style="font-size: 70%" id="m9MAGIapps">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5>Month 10</h5>
+            <P style="font-size: 70%" id="m10PRODapps">DATA</P>
+            <P style="font-size: 70%" id="m10SRCMPapps">DATA</P>
+            <P style="font-size: 70%" id="m10MAGIapps">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5>Month 11</h5>
+            <P style="font-size: 70%" id="m11PRODapps">DATA</P>
+            <P style="font-size: 70%" id="m11SRCMPapps">DATA</P>
+            <P style="font-size: 70%" id="m11MAGIapps">DATA</P>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-6 box">
+            <h5>Month 12</h5>
+            <P style="font-size: 70%" id="m12PRODapps">DATA</P>
+            <P style="font-size: 70%" id="m12SRCMPapps">DATA</P>
+            <P style="font-size: 70%" id="m12MAGIapps">DATA</P>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <h3><i class="ion-ios-desktop icon"></i> - Case Management</h3>
+    <div class="row">
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-2 box">
+            <h5 id="h5CM1">Case Management:1 - NR</h5>
+            <p id="cm1Text">Task Not Evaluated or Rating Not Keyed</p>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-2 box">
+            <h5 id="h5CM2">Case Management:2 - NR</h5>
+            <p id="cm2Text">Task Not Evaluated or Rating Not Keyed</p>
+        </div>
+    </div>
+    <div class="row">
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-2 box">
+            <h5 id="h5CM3">Case Management:3 - NR</h5>
+            <p id="cm3Text">Task Not Evaluated or Rating Not Keyed</p>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-2 box">
+            <h5 id="h5CM4">Case Management:4 - NR</h5>
+            <p id="cm4Text">Task Not Evaluated or Rating Not Keyed</p>
+        </div>
+    </div>
+    <div class="row">
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-2 box">
+            <h5 id="h5CM5">Case Management:5 - NR</h5>
+            <p id="cm5Text">Task Not Evaluated or Rating Not Keyed</p>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-2 box">
+            <h5 id="h5CM6">Case Management:6 - NR</h5>
+            <p id="cm6Text">Task Not Evaluated or Rating Not Keyed</p>
+        </div>
+    </div>
+    <div class="row">
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-2 box">
+            <h5 id="h5CM7">Case Management:7 - NR</h5>
+            <p id="cm7Text">Task Not Evaluated or Rating Not Keyed</p>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-2 box">
+            <h5 id="h5CM8">Case Management:8 - NR</h5>
+            <p id="cm8Text">Task Not Evaluated or Rating Not Keyed</p>
+        </div>
+    </div>
+    <div class="row">
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-2 box">
+            <h5 id="h5CM9">Case Management:9 - NR</h5>
+            <p id="cm9Text">Task Not Evaluated or Rating Not Keyed</p>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-2 box">
+            <h5 id="h5CM10">Case Management:10 - NR</h5>
+            <p id="cm10Text">Task Not Evaluated or Rating Not Keyed</p>
+        </div>
+    </div>
+    <div class="row">
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-2 box">
+            <h5 id="h5CM11">Case Management:11 - NR</h5>
+            <p id="cm11Text">Task Not Evaluated or Rating Not Keyed</p>
+        </div>
+        <div style="border: 3px; border-style: solid; border-color: #aaaaaa" class="col span-1-of-2 box">
+            <h5 id="h5CM12">Case Management:12 - NR</h5>
+            <p id="cm12Text">Task Not Evaluated or Rating Not Keyed</p>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br><br><br>
+
+    <a id="woops-button" align="center" style="width: 100%" class="btn btn-full" href="#buttons"
+       onclick="w3.hide('#pgcs-output'), w3.show('#buttons')" style="margin-top: 50px">Forget Something?</a>
+</div>
+</div>
+<footer style="text-align: center; margin-top: 30px; font-size: 50%">
+    <hr>
+    <br>PGCS Version 1.7.2<br>9/10/18 &mdash; Department of Human Services: County Operations
+</footer>
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyADYwMVobEKmpBiyYT4zgzYx7cRHm0KcxQ",
+        authDomain: "testdrive-958b9.firebaseapp.com",
+        databaseURL: "https://testdrive-958b9.firebaseio.com",
+        projectId: "testdrive-958b9",
+        storageBucket: "",
+        messagingSenderId: "242417425222"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/Grid.css">
+        <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
+        <link href="https://unpkg.com/ionicons@4.2.4/dist/css/ionicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet" type="text/css">
+      <title id="title-bar">Monthly Evaluation Form - PES</title>
+
+  </head>
+
+  <body onload="checkCookie()">
+      <div id="txt"></div><br>
+<h2 style="margin-top: 15px" style="margin-bottom: 10px" style="color: #414141">Monthly Evaluation!</h2>
+      <div class="row">
+                <div class="col span-1-of-2 box">
+                      <i class="ion-ios-paper-outline icon-big"></i>
+                    <h3>Worker</h3>
+                        <input type="text" id="wkrName" placeholder="Worker Name">
+                        <input type="number" id="wkrNum" maxlength="6" placeholder="AASIS#">
+                        <select name="county" style="width: 100%">
+						<option disabled selected>Select a county</option>
+						<option>AAPC</option>
+						<option>Arkansas County</option>
+						<option>Ashley County</option>
+						<option>Baxter County</option>
+						<option>Benton County</option>
+						<option>Boone County</option>
+						<option>Bradley County</option>
+						<option>Calhoun County</option>
+						<option>Carroll County</option>
+						<option>Chicot County</option>
+						<option>Clark County</option>
+						<option>Clay County</option>
+						<option>Cleburne County</option>
+						<option>Cleveland County</option>
+						<option>Columbia County</option>
+						<option>Conway County</option>
+						<option>Craighead County</option>
+						<option>Crawford County</option>
+						<option>Crittenden County</option>
+						<option>Cross County</option>
+						<option>Dallas County</option>
+						<option>Desha County</option>
+						<option>Drew County</option>
+						<option>Faulkner County</option>
+						<option>Franklin County</option>
+						<option>Fulton County</option>
+						<option>Garland County</option>
+						<option>Grant County</option>
+						<option>Greene County</option>
+						<option>Hempstead County</option>
+						<option>Hot Spring County</option>
+						<option>Howard County</option>
+						<option>Independence County</option>
+						<option>Izard County</option>
+						<option>Jackson County</option>
+						<option>Jefferson County</option>
+						<option>Johnson county</option>
+						<option>Lafayette County</option>
+						<option>Lawrence County</option>
+						<option>Lee County</option>
+						<option>Lincoln County</option>
+						<option>Little River County</option>
+                        <option>Logan County</option>
+                        <option>Lonoke County</option>
+                        <option>Madison County</option>
+                        <option>Marion County</option>
+                        <option>Miller County</option>
+                        <option>Mississippi County</option>
+                        <option>Monroe County</option>
+                        <option>Montgomery County</option>
+                        <option>Nevada County</option>
+                        <option>Newton County</option>
+                        <option>Ouachita County</option>
+                        <option>Perry County</option>
+                        <option>Phillips County</option>
+                        <option>Pike County</option>
+                        <option>Poinsett County</option>
+                        <option>Polk County</option>
+                        <option>Pope County</option>
+                        <option>Prairie County</option>
+                        <option>Pulaski County EAST</option>
+                        <option>Pulaski County JACKSONVILLE</option>
+                        <option>Pulaski County NORTH</option>
+                        <option>Pulaski County SOUTH</option>
+                        <option>Pulaski County SOUTHWEST</option>
+                        <option>Randolph County</option>
+                        <option>St. Francis County</option>
+                        <option>Saline County</option>
+                        <option>Scott County</option>
+                        <option>Searcy County</option>
+                        <option>Sebastian County</option>
+                        <option>Sevier County</option>
+                        <option>Sharp County</option>
+                        <option>Stone County</option>
+                        <option>Union County</option>
+                        <option>Van Buren County</option>
+                        <option>Washington County</option>
+                        <option>White County</option>
+                        <option>Woodruff County</option>
+                        <option>Yell County</option>
+
+					</select>
+                </div>
+                <div class="col span-1-of-2 box">
+                      <i class="ion-ios-paper-outline icon-big"></i>
+                    <h3>Reviewing Supervisor</h3>
+                        <div style="font-size: 100%" id="super1"></div>
+                        <div style="font-size: 100%" id="reviewDate">REPORT DATE</div>
+                </div>
+      </div>
+
+
+                  <div class="row">
+
+                <div class="col span-1-of-2 box">
+                        <h2 style="margin-bottom: 10px">Accuracy:</h2>
+                    <i class="ion-ios-calculator-outline icon-big"></i>
+                    <h3>Month 1</h3>
+                    <select id="m1Set" name="month1" placeholder="Select One" style="margin-bottom: 5px">
+                        <option disabled selected>Select One</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+<!--                    <select id="m1NWSet" name="month1NW" placeholder="Select One" style="margin-bottom: 5px">
+                        <option value="0.5">NW Month 1</option>
+                        <option value="0.72">NW Month 2</option>
+                        <option value="1" selected>Regular</option>
+                    </select>-->
+                        <h4>SNAP</h4>
+                        <input type="number" id="m1Acc" placeholder="Reviewed">
+                        <input type="number" id="m1Err" placeholder="Errors">
+                        <div id='month1-acc'>0.00%</div>
+                        <h4>MEDICAID</h4>
+                        <input type="number" id="m1MCAcc" placeholder="Reviewed">
+                        <input type="number" id="m1MCErr" placeholder="Errors">
+                        <div id='month1-MCacc'>0.00%</div>
+                         <h4>TEA</h4>
+                        <input type="number" id="m1TEAAcc" placeholder="Reviewed">
+                        <input type="number" id="m1TEAErr" placeholder="Errors">
+                        <div id='month1-TEAacc'>0.00%</div>
+                    <i class="ion-ios-save icon-big"></i>
+                    <h3>Comments:</h3>
+                    <textarea type="string" class="comments-field" placeholder="Type Here" style="height: 420px; width: 100%"></textarea>
+                </div>
+
+                        <div class="row">
+                <div class="col span-1-of-2 box">
+                    <h2>Timeliness &mdash;Production:</h2>
+                    <i class="ion-ios-pie-outline icon-big"></i>
+                    <h3>Month 1</h3><div id="m1Dupe" style="margin-bottom: 10px">---</div>
+                        <h4>Work Days</h4>
+                        <input type="number" id="m1AvailableDays" placeholder="Days">
+                        <h4>SNAP - ABCDE</h4>
+                        <input type="number" id="m1Time" placeholder="Assigned">
+                        <input type="number" id="m1Late" placeholder="Late">
+                        <input type="number" id="m1reassigned" placeholder="Reassigned">
+                        <div id='month1-time'>0.00%</div>
+                        <h4>SNAP - Exp.</h4>
+                        <input type="number" id="m1TimeEXP" placeholder="Assigned">
+                        <input type="number" id="m1LateEXP" placeholder="Late">
+                        <input type="number" id="m1EXPReassigned" placeholder="Reassigned">
+                        <div id='month1-timeEXP'>0.00%</div>
+                        <h4>SAR/Chng/MP</h4>
+                        <input type="number" id="m1TimeSAR" placeholder="Assigned">
+                        <input type="number" id="m1LateSAR" placeholder="Late">
+                        <input type="number" id="m1reassignedSAR" placeholder="Reassigned">
+                        <div id='month1-SARtime'>0.00%</div>
+                        <h4>Traditional Med.</h4>
+                        <input type="number" id="m1MCTime" placeholder="Assigned">
+                        <input type="number" id="m1MCLate" placeholder="Late">
+                        <input type="number" id="m1MCReassigned" placeholder="Reassigned">
+                        <div id='month1-MCtime'>0.00%</div>
+                        <h4>MAGI</h4>
+                        <input type="number" id="m1MAGITime" placeholder="Assigned">
+                        <input type="number" id="m1MAGILate" placeholder="Late">
+                        <input type="number" id="m1MAGIReassigned" placeholder="Reassigned">
+                        <div id='month1-MAGItime'>0.00%</div>
+                        <h4>TEA</h4>
+                        <input type="number" id="m1TEATime" placeholder="Assigned">
+                        <input type="number" id="m1TEALate" placeholder="Late">
+                        <input type="number" id="m1TEAReassigned" placeholder="Reassigned">
+                        <div id='month1-TEAtime'>0.00%</div>
+
+                </div>
+
+      </div>
+
+
+        <a id="ok-button" class="btn btn-full" href="#PGCSReport" onclick="runPgcsReport()" style="margin-top: 50px">Run Monthly Report</a>
+        <a class="btn btn-ghost" href="index.html">Cancel - LOSE ALL DATA</a>
+    <p>
+
+        <p style="page-break-after: always;">&nbsp;</p>
+      </div>
+      <h2 id="PGCSReport">Monthly Report</h2>
+      <H3 style="text-align: center">Production</H3>
+            <div class="row">
+                <div class="col span-1-of-3 box">
+                        <h4>Application Output</h4>
+                        <div id="prodAppStarScore">---</div>
+                        <div id="prodAppStarDescriptor">---</div>
+                        <!--<p id="month1-apps">-&#45;&#45;</p>-->
+                        <!--<p id="m1AppProdMet">-&#45;&#45;</p>-->
+                </div>
+                <div class="col span-1-of-3 box">
+                        <h4>SR/CH/MP Output</h4>
+                        <div id="prodSARStarScore">---</div>
+                        <div id="prodSARStarDescriptor">---</div>
+                            <!--<p id='month1-SRCMP'>-&#45;&#45;</p>-->
+                            <!--<p id="m1SRCMPProdMet">-&#45;&#45;</p>-->
+                </div>
+                <div class="col span-1-of-3 box">
+                        <h4>MAGI Tasks Cleared</h4>
+                        <div id="prodMAGIStarScore">---</div>
+                        <div id="prodMAGIStarDescriptor">---</div>
+                            <!--<p id='month1-MAGI'>-&#45;&#45;</p>-->
+                            <!--<p id="m1MAGIProdMet">-&#45;&#45;</p>-->
+                </div>
+
+
+      </div>
+
+                          <div class="row">
+                <div class="col span-1-of-4 box">
+                    <i class="ion-ios-checkmark-outline icon-big"></i>
+        <h3>Accuracy</h3>
+                    <h4>SNAP</h4>
+                        <div id="AccReviewed">---</div>
+                        <div id="AccError">---</div>
+                        <div id='AccuracyScore'>---</div>
+                     <h4>MEDICAID</h4>
+                        <div id="MCAccReviewed">---</div>
+                        <div id="MCAccError">---</div>
+                        <div id='MCAccuracyScore'>---</div>
+                       <h4>TEA</h4>
+                        <div id="TEAAccReviewed">---</div>
+                        <div id="TEAAccError">---</div>
+                        <div id='TEAAccuracyScore'>---</div>
+
+                              </div>
+                    <div class="col span-1-of-4 box">
+                    <i class="ion-ios-star icon-big"></i>
+        <h3>Accuracy Rating</h3>
+                        <h4>SNAP</h4>
+                        <div id="StarScore">---</div>
+                        <div id="StarDescriptor">---</div>
+                        <div id='AccuracyFinal'>---</div>
+                         <h4>MEDICAID</h4>
+                        <div id="MCStarScore">---</div>
+                        <div id="MCStarDescriptor">---</div>
+                        <div id='MCAccuracyFinal'>---</div>
+                        <h4>TEA</h4>
+                        <div id="TEAStarScore">---</div>
+                        <div id="TEAStarDescriptor">---</div>
+                        <div id='TEAAccuracyFinal'>---</div>
+                </div>
+
+                <div class="col span-1-of-4 box">
+                    <i class="ion-ios-alarm-outline icon-big"></i>
+                        <h3>Timeliness</h3>
+                        <h4>SNAP - ABCDE</h4>
+                            <div id="TimWorked">---</div>
+                            <div id="TimLate">---</div>
+                            <div id='TimeScore'>---</div>
+                        <h4>SNAP - EXP</h4>
+                            <div id="TimeWorkedEXP">---</div>
+                            <div id="TimeLateEXP">---</div>
+                            <div id='TimeEXPScore'>---</div>
+                        <h4>SNAP - SR/CH/MP</h4>
+                            <div id="TimeWorkedSAR">---</div>
+                            <div id="TimeLateSAR">---</div>
+                            <div id='TimeSARScore'>---</div>
+                        <h4>TRADITIONAL MEDICAID</h4>
+                            <div id="mcTimWorked">---</div>
+                            <div id="mcTimLate">---</div>
+                            <div id='mcTimeScore'>---</div>
+                        <h4>MAGI</h4>
+                            <div id="magiTimeWorked">---</div>
+                            <div id="magiTimeLate">---</div>
+                            <div id='magiTimeScore'>---</div>
+                        <h4>TEA</h4>
+                            <div id="TEATimWorked">---</div>
+                            <div id="TEATimLate">---</div>
+                            <div id='TEATimeScore'>---</div>
+                </div>
+                    <div class="col span-1-of-4 box">
+                    <i class="ion-ios-star icon-big"></i>
+                        <h3>Timeliness Rating</h3>
+                        <h4>SNAP - ABCDE</h4>
+                            <div id="StarScoreTime">---</div>
+                            <div id="StarDescriptorTime">---</div>
+                            <div id='TimeFinal'>---</div>
+                        <h4>SNAP - EXP</h4>
+                            <div id="StarScoreTimeEXP">---</div>
+                            <div id="StarDescriptorTimeEXP">---</div>
+                            <div id='TimeEXPFinal'>---</div>
+                        <h4>SNAP - SR/CH/MP</h4>
+                            <div id="StarScoreTimeSAR">---</div>
+                            <div id="StarDescriptorTimeSAR">---</div>
+                            <div id='TimeSARFinal'>---</div>
+                        <h4>TRADITIONAL MEDICAID</h4>
+                            <div id="mcStarScoreTime">---</div>
+                            <div id="mcStarDescriptorTime">---</div>
+                            <div id='mcTimeFinal'>---</div>
+                        <h4>MAGI</h4>
+                            <div id="magiStarScoreTime">---</div>
+                            <div id="magiStarDescriptorTime">---</div>
+                            <div id='magiTimeFinal'>---</div>
+                        <h4>TEA</h4>
+                            <div id="TEAStarScoreTime">---</div>
+                            <div id="TEAStarDescriptorTime">---</div>
+                            <div id='TEATimeFinal'>---</div>
+                </div>
+
+      </div>
+<div class="row">
+    <div class="col span-1-of-2 box">
+                        <h3>Worker:<br><br>     _________________________________________________________________</h3>
+        <br>
+        <h3>Date:<br><br>     _________________________________________________________________</h3>
+    </div>
+    <div class="col span-1-of-2 box">
+                        <h3>Supervisor<br><br>     _________________________________________________________________</h3>
+        <br>
+        <h3>Date:<br><br>     _________________________________________________________________</h3>
+    </div>
+    </div>
+      </div>
+    <script src="js/script3.js"></script>
+    </body>
+  <footer style="text-align: center; margin-top: 30px; font-size: 50%; margin-bottom: 20px">
+      <hr>
+      <br>PGCS Version 1.7.5<br>10/18/18 &mdash; Department of Human Services: County Operations
+
+  </footer>
+
+</html>
